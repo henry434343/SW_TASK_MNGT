@@ -18,9 +18,11 @@
 Step
 
 1. 在sw_task_mgnt.h註冊service_name
-		typedef enum service_name_s {
-    		TASK_EXAMPLE,
-		} service_name;
+` ``C
+typedef enum service_name_s {
+    TASK_EXAMPLE,
+} service_name;
+` ``
 2. 在sw_task_mgnt.c新增 service_info[] 加入自己的task_info pointer
 static task_info *service_info[] = {
     &EXAMPLE_TASK,
