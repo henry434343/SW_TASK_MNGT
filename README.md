@@ -18,18 +18,24 @@
 Step
 
 1. 在sw_task_mgnt.h註冊service_name
-` ``C
+```C
 typedef enum service_name_s {
     TASK_EXAMPLE,
 } service_name;
-` ``
+```
+
 2. 在sw_task_mgnt.c新增 service_info[] 加入自己的task_info pointer
+```C
 static task_info *service_info[] = {
     &EXAMPLE_TASK,
 };
+```
+
 3. 複製example_task.c 修改Thread information
+```C
 #define SERVICE_ENUM            TASK_EXAMPLE
 #define SERVICE_PRIORITY        DSYS_TASK_PRIORITY_HIGH9
 #define SERVICE_NAME            "Example task"
 #define SERVICE_STACK_SIZE      CYGNUM_HAL_STACK_SIZE_TYPICAL + (1024 * 8)
 task_info EXAMPLE_TASK
+```
